@@ -3,12 +3,15 @@
 
 ## Student Details
 
-- **Full Name:** `<Enter name>`
-- **CCID:** `<Enter ccid>`
+- **Full Name:** `Saurabh Singh Baghel>`
+- **CCID:** `sbaghel`
 
 ## References and Resources
 
-List any resources used here, or simply put `N/A` if not applicable.
+Geeks for Geeks - How to Dynamically Add Elements to a ListView in Android?
+Stack Overflow - Difference between adjustResize and adjustPan in android? (Change in AndroidManifest.xml for keyboard obscurng the Add City block)
+Stack Overflow - How to use visibility on android studio? (For add button to prompt the input field/ Add City block)
+
 
 ## Verbal Collaboration
 

@@ -8,7 +8,7 @@
 
 ## References and Resources
 
-List any resources used here, or simply put `N/A` if not applicable.
+Geeks for Geeks - How to Dynamically Add Elements to a ListView in Android?
 
 ## Verbal Collaboration
 

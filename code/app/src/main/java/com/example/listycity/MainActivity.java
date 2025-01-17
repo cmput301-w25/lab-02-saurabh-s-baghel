@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
                 if (!city.isEmpty()) {          // If the city item is not empty then add it to the list
                     dataList.add(city);
                     cityAdapter.notifyDataSetChanged();
-                    Toast.makeText(MainActivity.this, city + " added to the list", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, city + " added to the list", Toast.LENGTH_SHORT).show();
                     editList.setText("");       // Empty the input text box
                     LinearLayout addCityBlock = findViewById(R.id.add_city_block);
                     addCityBlock.setVisibility(View.GONE);      // Make the block invisible after the city has been added
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (selectedCity != null) {         // Check if the city is selected and then remove from the list
                     dataList.remove(selectedCity);
-                    Toast.makeText(MainActivity.this, selectedCity + " removed from the list", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, selectedCity + " removed from the list", Toast.LENGTH_SHORT).show();
                     cityAdapter.notifyDataSetChanged();
 
                 }

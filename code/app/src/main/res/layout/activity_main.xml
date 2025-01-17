@@ -12,56 +12,82 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:background="#009688"
-        android:text="@string/listy_city"
-        android:textSize="20sp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/listy_city"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/new_city"
-        android:layout_width="0dp"
+    <!-- Button block -->
+    <LinearLayout
+        android:id="@+id/buttton_block"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        android:hint="@string/enter_a_city_to_add"
-        app:layout_constraintTop_toBottomOf="@id/textView"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/city_list"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <Button
-        android:id="@+id/add_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/add_city"
-        app:layout_constraintTop_toBottomOf="@id/new_city"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/remove_button" />
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:text="@string/add_city" />
 
-    <Button
-        android:id="@+id/remove_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/delete_city"
-        app:layout_constraintTop_toBottomOf="@id/new_city"
-        app:layout_constraintStart_toEndOf="@id/add_button"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/remove_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:text="@string/delete_city" />
+
+    </LinearLayout>
 
     <ListView
         android:id="@+id/city_list"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
+        app:layout_constraintTop_toBottomOf="@id/buttton_block">
 
     </ListView>
+
+    <!-- This block is set to Invisible and when prompt to be visible it works for input-->
+    <LinearLayout
+        android:id="@+id/add_city_block"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <EditText
+            android:id="@+id/new_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_a_city_to_add"
+            app:layout_constraintBottom_toTopOf="@+id/city_list"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/city_list"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:text="@string/CONFIRM" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

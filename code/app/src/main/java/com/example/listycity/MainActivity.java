@@ -12,7 +12,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         cityList = findViewById(R.id.city_list);
-        editList = findViewById(R.id.new_city);
 
         String[] cities = {"Edmonton", "Vancouver", "Toronto", "Moscow", "Sydney"};
         dataList = new ArrayList<>();
@@ -56,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
         cityList.setAdapter(cityAdapter);
 
 
+        // LAB 2 Participation Exercise
+        editList = findViewById(R.id.new_city);
+
         cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -63,18 +67,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // When the add button is pressed it makes the input block visible so that user can put in Input Text
         Button addButton = findViewById(R.id.add_button);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String city = editList.getText().toString();    // Get the text using edit text
+                LinearLayout addCityBlock = findViewById(R.id.add_city_block);
+                addCityBlock.setVisibility(View.VISIBLE);
+            }
+        });
+
+        // Confirm Button which adds the new city to the data list
+
+        Button confirmButton = findViewById(R.id.confirm_button);
+        confirmButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String city = editList.getText().toString().trim();    // Get the text using edit text
                 if (!city.isEmpty()) {          // If the city item is not empty then add it to the list
                     dataList.add(city);
                     cityAdapter.notifyDataSetChanged();
+                    Toast.makeText(MainActivity.this, city + " added to the list", Toast.LENGTH_LONG).show();
                     editList.setText("");       // Empty the input text box
+                    LinearLayout addCityBlock = findViewById(R.id.add_city_block);
+                    addCityBlock.setVisibility(View.GONE);      // Make the block invisible after the city has been added
                 }
             }
         });
+
 
         // Function to delete the city
         Button removeButton = findViewById(R.id.remove_button);
@@ -83,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (selectedCity != null) {         // Check if the city is selected and then remove from the list
                     dataList.remove(selectedCity);
-                    selectedCity = null;
+                    Toast.makeText(MainActivity.this, selectedCity + " removed from the list", Toast.LENGTH_LONG).show();
                     cityAdapter.notifyDataSetChanged();
 
                 }

@@ -3,7 +3,7 @@
 
 ## Student Details
 
-- **Full Name:** `Saurabh Singh Baghel>`
+- **Full Name:** `Saurabh Singh Baghel`
 - **CCID:** `sbaghel`
 
 ## References and Resources

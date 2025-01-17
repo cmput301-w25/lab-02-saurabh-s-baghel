@@ -3,8 +3,8 @@
 
 ## Student Details
 
-- **Full Name:** `<Enter name>`
-- **CCID:** `<Enter ccid>`
+- **Full Name:** `Saurabh Singh Baghel`
+- **CCID:** `sbaghel`
 
 ## References and Resources
 

@@ -11,6 +11,7 @@
 Geeks for Geeks - How to Dynamically Add Elements to a ListView in Android?
 Stack Overflow - Difference between adjustResize and adjustPan in android? (Change in AndroidManifest.xml for keyboard obscurng the Add City block)
 Stack Overflow - How to use visibility on android studio? (For add button to prompt the input field/ Add City block)
+Android Developers - How to use Toast to display an action
 
 
 ## Verbal Collaboration
